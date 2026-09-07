@@ -2,12 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="keywords" content="Nikhil Soni, nikhil6872, Offensive Security Researcher, Web Penetration Tester, OWASP Top 10, Bug Bounty, API Security, Vulnerability Assessment"> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Nikhil Soni | Offensive Security Researcher & Penetration Tester</title>
   
-  <!-- SEO & Entity Indexing -->
-  <meta name="description" content="Offensive Security Researcher & Web Penetration Tester. Manual OWASP Top 10 security audits, IDOR analysis, and code-level remediation.">
+  <!-- Google Search Console Verification Tokens -->
+  <meta name="google-site-verification" content="iPn80A1KPcjgxPXDQzTH3BKIDT_DGBx7DM12j2qVUYI" />
+  <meta name="google-site-verification" content="LKCmsbfpWTO7471cdj1_BnGyzp_dPuBmXNTmAx-XExE" />
+
+  <!-- Target SEO Keywords & Metadata -->
+  <meta name="keywords" content="Nikhil Soni, nikhil6872, Offensive Security Researcher, Web Penetration Tester, OWASP Top 10, Bug Bounty, API Security, Vulnerability Assessment, IDOR Testing">
+  <meta name="description" content="Official portfolio of Nikhil Soni — Offensive Security Researcher & Web Penetration Tester. Manual OWASP Top 10 security audits, IDOR analysis, and code-level remediation.">
   <link rel="canonical" href="https://nikhil6872.github.io/portfolio/">
   <meta property="og:title" content="Nikhil Soni | Offensive Security Researcher & Pentester">
   <meta property="og:description" content="Manual vulnerability assessment and precision logic audits for web applications and APIs.">
@@ -16,7 +20,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="ww.png">
 
-  <!-- Defensive Security Headers (Finding-04 Remediated) -->
+  <!-- Defensive Security Headers -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; frame-ancestors 'none'; base-uri 'self';">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -77,12 +81,12 @@
     #matrix-canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: -2; opacity: 0.16; display: none; }
     .container { max-width: 1140px; margin: 0 auto; padding: 0 18px; width: 100%; }
 
-    /* Sticky Navigation */
+    /* Sticky Glass Navigation */
     .nav-wrapper { position: sticky; top: 0; width: 100%; z-index: 1000; background: rgba(7, 10, 14, 0.92); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
     .nav-inner { max-width: 1140px; margin: 0 auto; padding: 10px 18px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
     
     .brand-logo { font-size: 1.05rem; font-weight: 800; color: #fff; text-decoration: none; letter-spacing: 0.5px; font-family: monospace; display: inline-flex; align-items: center; gap: 10px; flex-shrink: 0; }
-    .brand-logo img.logo-img { width: 34px; height: 34px; object-fit: contain; vertical-align: middle; border-radius: 50%; filter: drop-shadow(0 0 8px rgba(0, 255, 102, 0.5)); }
+    .brand-logo img.logo-img { width: 36px; height: 36px; object-fit: contain; vertical-align: middle; border-radius: 50%; filter: drop-shadow(0 0 8px rgba(0, 255, 102, 0.5)); }
     .brand-logo .accent-text { color: var(--accent); }
 
     .nav-center-links { display: flex; align-items: center; gap: 20px; }
@@ -145,7 +149,7 @@
     .bounty-badge { background: var(--card-bg); border: 1px solid var(--border); padding: 6px 12px; border-radius: 30px; font-size: 0.78rem; font-family: monospace; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
     .bounty-badge span { color: var(--accent); font-weight: bold; }
 
-    /* Terminal */
+    /* Terminal (Safe Against DOM XSS) */
     .terminal-window { background: #040608; border: 1px solid #1c2430; border-radius: 10px; overflow: hidden; margin-bottom: 35px; font-family: monospace; box-shadow: 0 15px 35px rgba(0,0,0,0.6); }
     .terminal-bar { background: #0c1117; padding: 10px 14px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid #1c2430; }
     .t-btn { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
@@ -200,10 +204,9 @@
     input, textarea, select { width: 100%; padding: 12px; background: var(--code-bg); border: 1px solid var(--border); border-radius: 8px; color: #fff; font-size: 0.92rem; }
     input:focus, textarea:focus, select:focus { outline: none; border-color: var(--border-focus); }
 
-    /* Floating WhatsApp Button */
     .float-wa { position: fixed; bottom: 18px; right: 18px; background-color: #25D366; color: white; border-radius: 50px; padding: 10px 18px; font-weight: 700; text-decoration: none; box-shadow: 0 6px 20px rgba(0,0,0,0.6); z-index: 100; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; }
 
-    /* Modals (Finding-03 & 05 Remediated) */
+    /* Modals */
     .modal-backdrop { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.88); z-index: 2000; justify-content: center; align-items: center; padding: 15px; -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
     .modal-box { background: #0c1117; border: 1px solid #222d3d; width: 100%; max-width: 440px; border-radius: 12px; padding: 22px 18px; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.8); max-height: 90vh; overflow-y: auto; }
     .modal-box.text-center { text-align: center; }
@@ -216,7 +219,7 @@
     .qr-container { background: #fff; padding: 10px; border-radius: 8px; display: inline-block; margin: 12px 0 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); max-width: 100%; }
     .qr-container img { max-width: 100%; height: auto; }
 
-    /* Client Dashboard (Finding-02 Remediated) */
+    /* Client Dashboard */
     #client-dashboard { display: none; background: var(--accent-dim); border: 1px solid var(--accent); border-radius: 12px; padding: 20px 16px; margin: 25px 0 10px; }
     .dash-header-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
     .dash-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-top: 12px; }
@@ -231,7 +234,7 @@
     .jwt-pre-red { color: #ff8b94; margin-top: 6px; white-space: pre-wrap; word-break: break-all; }
     .jwt-pre-blue { color: #9cdcfe; margin-top: 6px; white-space: pre-wrap; word-break: break-all; }
 
-    /* Utility Classes */
+    /* Clean Utility Classes */
     .w-100 { width: 100%; }
     .text-accent { color: var(--accent); }
     .text-danger { color: var(--danger); }
@@ -253,9 +256,7 @@
 
     footer { text-align: center; margin-top: 55px; color: var(--text-muted); font-size: 0.8rem; border-top: 1px solid var(--border); padding-top: 25px; }
 
-    /* ==============================================================
-       MOBILE RESPONSIVENESS BREAKPOINTS (Phone & Tablet)
-       ============================================================== */
+    /* Mobile Responsive Breakpoints */
     @media (max-width: 860px) {
       .nav-inner { flex-wrap: wrap; padding: 8px 14px; }
       .nav-center-links { order: 3; width: 100%; overflow-x: auto; padding-top: 8px; padding-bottom: 4px; gap: 16px; -webkit-overflow-scrolling: touch; }
@@ -267,7 +268,7 @@
     @media (max-width: 520px) {
       body { padding-bottom: 75px; }
       .brand-logo span { font-size: 0.95rem; }
-      .brand-logo img.logo-img { width: 30px; height: 30px; }
+      .brand-logo img.logo-img { width: 32px; height: 32px; }
       .nav-actions { gap: 6px; }
       .select-pill { font-size: 0.72rem; padding: 5px 20px 5px 8px; }
       .icon-btn { padding: 5px 9px; font-size: 0.72rem; }
@@ -287,14 +288,14 @@
   <canvas id="matrix-canvas"></canvas>
   <div id="toast">Notification</div>
 
-  <!-- WhatsApp Floating Action -->
+  <!-- WhatsApp Action -->
   <a href="https://wa.me/917597264028?text=Hi%20Nikhil,%20I%20am%20interested%20in%20a%20security%20audit" target="_blank" rel="noopener noreferrer" class="float-wa">💬 WhatsApp</a>
 
   <!-- Top Sticky Glass Navbar -->
   <header class="nav-wrapper">
     <div class="nav-inner">
       <a href="#" class="brand-logo">
-        <img src="ww.png" alt="Cyber Wolf Logo" class="logo-img" width="34" height="34">
+        <img src="ww.png" alt="Cyber Wolf Logo" class="logo-img" width="36" height="36">
         <span>&lt;NIKHIL<span class="accent-text">.PENTEST</span> /&gt;</span>
       </a>
 
@@ -338,7 +339,7 @@
         <div class="pay-tab" id="tab-card" onclick="switchPayMethod('card')">💳 Card / PayPal</div>
       </div>
 
-      <!-- UPI Payment View (Finding-03 & 05 Remediated) -->
+      <!-- UPI Payment View -->
       <div id="upi-pay-view">
         <div class="qr-container">
           <img id="upi-qr-img" src="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22170%22 height=%22170%22 viewBox=%220 0 170 170%22><rect width=%22170%22 height=%22170%22 fill=%22%23f0f0f0%22/><text x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%23666%22 font-family=%22monospace%22 font-size=%2212%22>Generating QR...</text></svg>" alt="Scan UPI QR Code" width="160" height="160">
@@ -362,16 +363,16 @@
         </form>
       </div>
 
-      <!-- International / Card View -->
+      <!-- Card / International View -->
       <div id="card-pay-view">
         <p class="text-muted" style="font-size: 0.85rem; margin-bottom: 14px;">For international clients paying in USD via Card or PayPal:</p>
-        <a id="paypal-link" href="https://paypal.me/nikhilsoni14" target="_blank" rel="noopener noreferrer" class="btn btn-primary w-100">Proceed to PayPal ↗</a>
+        <a id="paypal-link" href="https://paypal.me/nikhilson14" target="_blank" rel="noopener noreferrer" class="btn btn-primary w-100">Proceed to PayPal ↗</a>
         <p class="text-muted" style="font-size: 0.78rem; margin-top: 8px;">Invoices include NDA and formal scoping documentation.</p>
       </div>
     </div>
   </div>
 
-  <!-- Client Login / Signup Modal -->
+  <!-- Client Login Modal -->
   <div class="modal-backdrop" id="auth-modal">
     <div class="modal-box">
       <span class="modal-close" onclick="closeAuthModal()">&times;</span>
@@ -414,7 +415,7 @@
   </div>
 
   <div class="container">
-    <!-- Active Client Engagement Dashboard (Finding-02 Remediated) -->
+    <!-- Active Client Engagement Dashboard -->
     <div id="client-dashboard">
       <div class="dash-header-row">
         <div>
@@ -457,7 +458,7 @@
       <div class="bounty-badge"><span>✓</span> Safe Harbor Adherent</div>
     </div>
 
-    <!-- Interactive Terminal (Sanitized Against DOM XSS) -->
+    <!-- Interactive Terminal -->
     <div class="terminal-window">
       <div class="terminal-bar">
         <span class="t-btn t-close"></span>
@@ -595,7 +596,7 @@
       </div>
     </div>
 
-    <!-- Payload Encoder (Finding-01: Sanitized textContent) -->
+    <!-- Payload Encoder -->
     <h2 class="section-title" id="encoder">Payload Encoder & Decoder</h2>
     <div class="feature-box">
       <div class="input-row">
@@ -612,7 +613,7 @@
       </div>
     </div>
 
-    <!-- CIDR Subnet Calculator -->
+    <!-- CIDR Calculator -->
     <h2 class="section-title" id="cidr">CIDR Subnet & Scope Calculator</h2>
     <div class="feature-box">
       <div class="input-row">
@@ -952,7 +953,7 @@
       sig.className = "text-accent font-bold";
     }
 
-    /* Payload Encoder (Finding-01: textContent eliminates XSS sink) */
+    /* Payload Encoder (Safe textContent) */
     function transformPayload(action) {
       const input = document.getElementById('encode-input').value;
       const out = document.getElementById('encode-output');
@@ -989,7 +990,7 @@
       out.className = "tool-output text-accent";
     }
 
-    /* Terminal CLI (Finding-01: textContent prevents DOM XSS) */
+    /* Terminal CLI (Safe textContent) */
     function printTerminalLine(text, styleClass = '') {
       const out = document.getElementById('term-output');
       const p = document.createElement('p');
