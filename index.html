@@ -2,16 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link rel="icon" type="image/png" href="ww.png">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Nikhil Soni | Offensive Security Researcher & Penetration Tester</title>
   
-  <!-- SEO & Social Media Previews -->
+  <!-- SEO & Entity Indexing -->
   <meta name="description" content="Offensive Security Researcher & Web Penetration Tester. Manual OWASP Top 10 security audits, IDOR analysis, and code-level remediation.">
+  <link rel="canonical" href="https://nikhil6872.github.io/portfolio/">
   <meta property="og:title" content="Nikhil Soni | Offensive Security Researcher & Pentester">
   <meta property="og:description" content="Manual vulnerability assessment and precision logic audits for web applications and APIs.">
   <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="ww.png">
+
+  <!-- Defensive Security Headers (Finding-04 Remediated) -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; frame-ancestors 'none'; base-uri 'self';">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <!-- Google Knowledge Graph Schema (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Nikhil Soni",
+    "url": "https://nikhil6872.github.io/portfolio/",
+    "jobTitle": "Offensive Security Researcher & Web Penetration Tester",
+    "description": "Offensive Security Researcher specializing in manual OWASP Top 10 audits, IDOR detection, and secure remediation.",
+    "sameAs": [
+      "https://github.com/nikhil6872"
+    ],
+    "knowsAbout": [
+      "Web Application Penetration Testing",
+      "OWASP Top 10",
+      "Offensive Security",
+      "API Security",
+      "Vulnerability Assessment"
+    ]
+  }
+  </script>
 
   <style>
     :root {
@@ -41,32 +70,32 @@
       --accent-dim: rgba(255, 51, 102, 0.08);
     }
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif; }
-    body { background-color: var(--bg); color: var(--text); line-height: 1.6; padding-bottom: 90px; position: relative; overflow-x: hidden; }
+    body { background-color: var(--bg); color: var(--text); line-height: 1.6; padding-bottom: 90px; position: relative; overflow-x: hidden; width: 100%; }
     body::before { content: ""; position: fixed; top: 0; left: 50%; transform: translateX(-50%); width: 100vw; height: 450px; background: radial-gradient(circle at 50% 0%, var(--accent-dim), transparent 70%); pointer-events: none; z-index: -1; }
 
     #matrix-canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: -2; opacity: 0.16; display: none; }
-    .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 18px; width: 100%; }
 
     /* Sticky Navigation */
-    .nav-wrapper { position: sticky; top: 0; width: 100%; z-index: 1000; background: rgba(7, 10, 14, 0.85); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
-    .nav-inner { max-width: 1140px; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-wrapper { position: sticky; top: 0; width: 100%; z-index: 1000; background: rgba(7, 10, 14, 0.92); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 1140px; margin: 0 auto; padding: 10px 18px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
     
-    .brand-logo { font-size: 1.15rem; font-weight: 800; color: #fff; text-decoration: none; letter-spacing: 0.5px; font-family: monospace; display: flex; align-items: center; gap: 6px; }
-    .brand-logo .dot-active { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent); }
+    .brand-logo { font-size: 1.05rem; font-weight: 800; color: #fff; text-decoration: none; letter-spacing: 0.5px; font-family: monospace; display: inline-flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .brand-logo img.logo-img { width: 34px; height: 34px; object-fit: contain; vertical-align: middle; border-radius: 50%; filter: drop-shadow(0 0 8px rgba(0, 255, 102, 0.5)); }
     .brand-logo .accent-text { color: var(--accent); }
 
-    .nav-center-links { display: flex; align-items: center; gap: 22px; }
-    .nav-center-links a { color: var(--text-muted); text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: color 0.2s; }
+    .nav-center-links { display: flex; align-items: center; gap: 20px; }
+    .nav-center-links a { color: var(--text-muted); text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: color 0.2s; white-space: nowrap; }
     .nav-center-links a:hover { color: var(--accent); }
 
-    .nav-actions { display: flex; align-items: center; gap: 8px; }
+    .nav-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
     
     .select-pill {
       background: #111722;
       border: 1px solid var(--border);
       color: #c9d1d9;
       font-size: 0.78rem;
-      padding: 6px 26px 6px 10px;
+      padding: 6px 24px 6px 10px;
       border-radius: 6px;
       cursor: pointer;
       -webkit-appearance: none;
@@ -79,14 +108,14 @@
     }
     .select-pill:hover, .select-pill:focus { border-color: var(--border-focus); outline: none; }
 
-    .icon-btn { background: #111722; border: 1px solid var(--border); color: var(--text-muted); padding: 6px 11px; border-radius: 6px; font-size: 0.78rem; cursor: pointer; transition: 0.2s; }
+    .icon-btn { background: #111722; border: 1px solid var(--border); color: var(--text-muted); padding: 6px 11px; border-radius: 6px; font-size: 0.78rem; cursor: pointer; transition: 0.2s; white-space: nowrap; }
     .icon-btn:hover { border-color: var(--border-focus); color: #fff; }
 
     .btn-portal {
       background: var(--accent-dim);
       border: 1px solid var(--accent);
       color: var(--accent);
-      padding: 7px 15px;
+      padding: 7px 14px;
       border-radius: 6px;
       font-size: 0.82rem;
       font-weight: 600;
@@ -95,108 +124,113 @@
       align-items: center;
       gap: 6px;
       transition: all 0.2s ease;
+      white-space: nowrap;
     }
     .btn-portal:hover { opacity: 0.9; }
 
     /* Hero Section */
-    header { text-align: center; margin: 60px 0 45px; }
-    .status-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; background: var(--accent-dim); border: 1px solid var(--accent); color: var(--accent); border-radius: 30px; font-size: 0.82rem; font-weight: 600; margin-bottom: 22px; }
-    h1 { font-size: 3rem; margin-bottom: 18px; color: #fff; font-weight: 800; line-height: 1.15; letter-spacing: -0.5px; }
-    p.subtitle { color: var(--text-muted); font-size: 1.12rem; max-width: 780px; margin: 0 auto 32px; }
-    .hero-cta { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+    header { text-align: center; margin: 45px 0 35px; }
+    .status-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; background: var(--accent-dim); border: 1px solid var(--accent); color: var(--accent); border-radius: 30px; font-size: 0.8rem; font-weight: 600; margin-bottom: 18px; }
+    .dot-active { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent); }
+    h1 { font-size: clamp(1.85rem, 5vw, 3rem); margin-bottom: 16px; color: #fff; font-weight: 800; line-height: 1.2; letter-spacing: -0.5px; }
+    p.subtitle { color: var(--text-muted); font-size: clamp(0.95rem, 2.5vw, 1.12rem); max-width: 780px; margin: 0 auto 28px; }
+    .hero-cta { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
 
-    .section-title { font-size: 1.5rem; margin: 70px 0 25px; color: #fff; display: flex; align-items: center; gap: 12px; font-weight: 700; }
+    .section-title { font-size: clamp(1.25rem, 3.5vw, 1.5rem); margin: 55px 0 20px; color: #fff; display: flex; align-items: center; gap: 12px; font-weight: 700; }
     .section-title::after { content: ""; flex: 1; height: 1px; background: var(--border); }
 
     /* Badges */
-    .bounty-strip { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 45px; }
-    .bounty-badge { background: var(--card-bg); border: 1px solid var(--border); padding: 7px 16px; border-radius: 30px; font-size: 0.82rem; font-family: monospace; color: var(--text-muted); display: flex; align-items: center; gap: 8px; }
+    .bounty-strip { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 35px; }
+    .bounty-badge { background: var(--card-bg); border: 1px solid var(--border); padding: 6px 12px; border-radius: 30px; font-size: 0.78rem; font-family: monospace; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
     .bounty-badge span { color: var(--accent); font-weight: bold; }
 
     /* Terminal */
-    .terminal-window { background: #040608; border: 1px solid #1c2430; border-radius: 10px; overflow: hidden; margin-bottom: 45px; font-family: monospace; box-shadow: 0 15px 35px rgba(0,0,0,0.6); }
-    .terminal-bar { background: #0c1117; padding: 10px 16px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid #1c2430; }
+    .terminal-window { background: #040608; border: 1px solid #1c2430; border-radius: 10px; overflow: hidden; margin-bottom: 35px; font-family: monospace; box-shadow: 0 15px 35px rgba(0,0,0,0.6); }
+    .terminal-bar { background: #0c1117; padding: 10px 14px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid #1c2430; }
     .t-btn { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
     .t-close { background: #ff5f56; } .t-min { background: #ffbd2e; } .t-max { background: #27c93f; }
-    .terminal-title { margin: 0 auto; font-size: 0.8rem; color: var(--text-muted); }
-    .terminal-body { padding: 20px; font-size: 0.88rem; line-height: 1.6; color: #dcdfe4; max-height: 280px; overflow-y: auto; }
+    .terminal-title { margin: 0 auto; font-size: 0.75rem; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .terminal-body { padding: 16px; font-size: 0.84rem; line-height: 1.55; color: #dcdfe4; max-height: 250px; overflow-y: auto; word-break: break-all; }
     .t-prompt { color: var(--accent); font-weight: bold; }
-    .terminal-input-bar { background: #040608; padding: 8px 20px 16px; border-top: 1px solid #1c2430; }
+    .terminal-input-bar { background: #040608; padding: 8px 16px 14px; border-top: 1px solid #1c2430; }
     .t-input-line { display: flex; align-items: center; gap: 8px; margin-top: 5px; }
-    .t-input { background: transparent; border: none; color: #fff; outline: none; font-family: inherit; font-size: inherit; width: 100%; }
+    .t-input { background: transparent; border: none; color: #fff; outline: none; font-family: inherit; font-size: 0.95rem; width: 100%; }
 
     /* Trust Stats */
-    .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 45px; }
-    .trust-box { background: var(--card-bg); border: 1px solid var(--border); padding: 22px; border-radius: 10px; text-align: center; }
-    .trust-box .stat { font-size: 1.9rem; font-weight: 800; color: var(--accent); }
-    .trust-box .stat-label { font-size: 0.84rem; color: var(--text-muted); margin-top: 4px; }
+    .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 35px; }
+    .trust-box { background: var(--card-bg); border: 1px solid var(--border); padding: 18px 14px; border-radius: 10px; text-align: center; }
+    .trust-box .stat { font-size: 1.6rem; font-weight: 800; color: var(--accent); }
+    .trust-box .stat-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 3px; }
 
     /* Feature Box */
-    .feature-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 26px; margin-bottom: 40px; }
+    .feature-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 35px; }
     .input-row { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
-    .input-row input, .input-row select, .input-row textarea { flex: 1; min-width: 220px; padding: 12px; background: var(--code-bg); border: 1px solid var(--border); border-radius: 8px; color: #fff; font-size: 0.95rem; }
-    .tool-output { margin-top: 20px; background: var(--code-bg); border: 1px solid var(--border); border-radius: 8px; padding: 18px; font-family: monospace; font-size: 0.86rem; display: none; }
+    .input-row input, .input-row select, .input-row textarea { flex: 1; min-width: 200px; padding: 12px; background: var(--code-bg); border: 1px solid var(--border); border-radius: 8px; color: #fff; font-size: 0.92rem; }
+    .tool-output { margin-top: 15px; background: var(--code-bg); border: 1px solid var(--border); border-radius: 8px; padding: 14px; font-family: monospace; font-size: 0.82rem; display: none; word-break: break-all; }
 
     /* Pricing Cards */
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 20px; }
-    .pricing-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 32px 26px; display: flex; flex-direction: column; justify-content: space-between; transition: 0.2s; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 18px; }
+    .pricing-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 26px 20px; display: flex; flex-direction: column; justify-content: space-between; transition: 0.2s; }
     .pricing-card:hover { border-color: rgba(255, 255, 255, 0.18); transform: translateY(-2px); }
     .pricing-card.featured { border-color: var(--accent); background: linear-gradient(180deg, rgba(0, 255, 102, 0.04), transparent 60%), var(--card-bg); box-shadow: 0 0 30px rgba(0,255,102,0.08); }
-    .pricing-price { font-size: 2.2rem; font-weight: 800; color: #fff; margin: 15px 0; }
-    .pricing-features { list-style: none; margin-bottom: 25px; color: var(--text-muted); font-size: 0.92rem; }
-    .pricing-features li { margin-bottom: 10px; }
+    .pricing-price { font-size: 1.95rem; font-weight: 800; color: #fff; margin: 12px 0; }
+    .pricing-features { list-style: none; margin-bottom: 22px; color: var(--text-muted); font-size: 0.88rem; }
+    .pricing-features li { margin-bottom: 8px; }
     .card-actions { display: flex; gap: 8px; flex-direction: column; }
 
     /* Buttons */
-    .btn { display: inline-block; padding: 12px 20px; border-radius: 8px; font-weight: 700; text-decoration: none; cursor: pointer; border: none; font-size: 0.95rem; text-align: center; transition: 0.2s; }
+    .btn { display: inline-block; padding: 12px 18px; border-radius: 8px; font-weight: 700; text-decoration: none; cursor: pointer; border: none; font-size: 0.92rem; text-align: center; transition: 0.2s; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
     .btn-primary { background: var(--accent); color: #000; }
     .btn-primary:hover { opacity: 0.92; box-shadow: 0 0 20px var(--accent-glow); }
-    .btn-pay { background: #00d26a; color: #000; font-weight: 800; }
+    .btn-pay { background: #00d26a; color: #000; font-weight: 800; width: 100%; }
     .btn-pay:hover { background: #00ff7f; box-shadow: 0 0 15px rgba(0,255,127,0.3); }
     .btn-outline { background: transparent; color: #fff; border: 1px solid var(--border); }
     .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
-    .btn-whatsapp { background: #25D366; color: #fff; display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; margin-top: 15px; }
+    .btn-whatsapp { background: #25D366; color: #fff; display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; margin-top: 15px; width: 100%; }
 
     /* Telemetry */
-    #ping-canvas { width: 100%; height: 90px; background: var(--code-bg); border: 1px solid var(--border); border-radius: 8px; margin-top: 15px; }
-    .telemetry-meta { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted); margin-top: 8px; font-family: monospace; }
+    #ping-canvas { width: 100%; height: 90px; background: var(--code-bg); border: 1px solid var(--border); border-radius: 8px; margin-top: 12px; }
+    .telemetry-meta { display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--text-muted); margin-top: 8px; font-family: monospace; flex-wrap: wrap; gap: 5px; }
 
     /* Contact Section */
-    .contact-section { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 40px; margin-top: 60px; }
-    .form-group { margin-bottom: 18px; }
-    label { display: block; margin-bottom: 6px; font-size: 0.88rem; color: var(--text-muted); font-weight: 500; }
-    input, textarea, select { width: 100%; padding: 12px; background: var(--code-bg); border: 1px solid var(--border); border-radius: 8px; color: #fff; font-size: 0.95rem; }
+    .contact-section { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 26px 18px; margin-top: 45px; }
+    .form-group { margin-bottom: 16px; }
+    label { display: block; margin-bottom: 6px; font-size: 0.86rem; color: var(--text-muted); font-weight: 500; }
+    input, textarea, select { width: 100%; padding: 12px; background: var(--code-bg); border: 1px solid var(--border); border-radius: 8px; color: #fff; font-size: 0.92rem; }
     input:focus, textarea:focus, select:focus { outline: none; border-color: var(--border-focus); }
 
-    .float-wa { position: fixed; bottom: 25px; right: 25px; background-color: #25D366; color: white; border-radius: 50px; padding: 13px 22px; font-weight: 700; text-decoration: none; box-shadow: 0 6px 20px rgba(0,0,0,0.6); z-index: 100; font-size: 0.92rem; }
+    /* Floating WhatsApp Button */
+    .float-wa { position: fixed; bottom: 18px; right: 18px; background-color: #25D366; color: white; border-radius: 50px; padding: 10px 18px; font-weight: 700; text-decoration: none; box-shadow: 0 6px 20px rgba(0,0,0,0.6); z-index: 100; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; }
 
-    /* Modals */
-    .modal-backdrop { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.85); z-index: 2000; justify-content: center; align-items: center; padding: 15px; -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
-    .modal-box { background: #0c1117; border: 1px solid #222d3d; width: 100%; max-width: 460px; border-radius: 12px; padding: 30px; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.8); }
+    /* Modals (Finding-03 & 05 Remediated) */
+    .modal-backdrop { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.88); z-index: 2000; justify-content: center; align-items: center; padding: 15px; -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+    .modal-box { background: #0c1117; border: 1px solid #222d3d; width: 100%; max-width: 440px; border-radius: 12px; padding: 22px 18px; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.8); max-height: 90vh; overflow-y: auto; }
     .modal-box.text-center { text-align: center; }
-    .modal-close { position: absolute; top: 14px; right: 18px; font-size: 1.4rem; color: var(--text-muted); cursor: pointer; }
+    .modal-close { position: absolute; top: 12px; right: 15px; font-size: 1.4rem; color: var(--text-muted); cursor: pointer; padding: 4px 8px; }
     .modal-close:hover { color: #fff; }
     
-    .pay-tabs { display: flex; gap: 8px; margin: 18px 0; }
-    .pay-tab { flex: 1; padding: 8px; text-align: center; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: 600; color: var(--text-muted); }
+    .pay-tabs { display: flex; gap: 6px; margin: 15px 0; }
+    .pay-tab { flex: 1; padding: 9px; text-align: center; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; cursor: pointer; font-size: 0.8rem; font-weight: 600; color: var(--text-muted); min-height: 40px; display: flex; align-items: center; justify-content: center; }
     .pay-tab.active { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
-    .qr-container { background: #fff; padding: 12px; border-radius: 8px; display: inline-block; margin: 15px 0 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); }
+    .qr-container { background: #fff; padding: 10px; border-radius: 8px; display: inline-block; margin: 12px 0 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); max-width: 100%; }
+    .qr-container img { max-width: 100%; height: auto; }
 
-    /* Client Dashboard */
-    #client-dashboard { display: none; background: var(--accent-dim); border: 1px solid var(--accent); border-radius: 12px; padding: 25px; margin: 30px 0 10px; }
+    /* Client Dashboard (Finding-02 Remediated) */
+    #client-dashboard { display: none; background: var(--accent-dim); border: 1px solid var(--accent); border-radius: 12px; padding: 20px 16px; margin: 25px 0 10px; }
     .dash-header-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
-    .dash-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px; }
-    .dash-card { background: var(--code-bg); padding: 15px; border-radius: 8px; border: 1px solid var(--border); }
-    .dash-card-label { color: var(--text-muted); font-size: 0.8rem; }
-    .dash-card-val { font-weight: bold; margin-top: 4px; }
+    .dash-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-top: 12px; }
+    .dash-card { background: var(--code-bg); padding: 14px; border-radius: 8px; border: 1px solid var(--border); }
+    .dash-card-label { color: var(--text-muted); font-size: 0.75rem; }
+    .dash-card-val { font-weight: bold; margin-top: 4px; font-size: 0.9rem; }
+    .demo-badge { display: inline-block; background: rgba(255, 165, 2, 0.15); color: var(--warning); border: 1px solid var(--warning); border-radius: 4px; font-size: 0.7rem; padding: 2px 6px; margin-bottom: 6px; font-family: monospace; }
 
     /* JWT Lab Grid */
-    .jwt-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 15px; margin-top: 15px; }
-    .jwt-box { background: var(--code-bg); border: 1px solid var(--border); border-radius: 8px; padding: 15px; font-family: monospace; font-size: 0.82rem; }
-    .jwt-pre-red { color: #ff8b94; margin-top: 8px; }
-    .jwt-pre-blue { color: #9cdcfe; margin-top: 8px; }
+    .jwt-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: 15px; }
+    .jwt-box { background: var(--code-bg); border: 1px solid var(--border); border-radius: 8px; padding: 14px; font-family: monospace; font-size: 0.8rem; word-break: break-all; }
+    .jwt-pre-red { color: #ff8b94; margin-top: 6px; white-space: pre-wrap; word-break: break-all; }
+    .jwt-pre-blue { color: #9cdcfe; margin-top: 6px; white-space: pre-wrap; word-break: break-all; }
 
-    /* Clean Utility Classes (Replaces Inline Styles) */
+    /* Utility Classes */
     .w-100 { width: 100%; }
     .text-accent { color: var(--accent); }
     .text-danger { color: var(--danger); }
@@ -210,13 +244,41 @@
     .gap-10 { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px; }
     .gap-8 { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
 
-    /* Toast Notification */
-    #toast { visibility: hidden; min-width: 260px; background-color: #111722; color: var(--accent); border: 1px solid var(--accent); text-align: center; border-radius: 8px; padding: 12px 18px; position: fixed; z-index: 3000; left: 50%; bottom: 30px; transform: translateX(-50%); font-family: monospace; font-size: 0.88rem; box-shadow: 0 6px 20px rgba(0,0,0,0.6); }
+    /* Toast */
+    #toast { visibility: hidden; min-width: 240px; max-width: 90vw; background-color: #111722; color: var(--accent); border: 1px solid var(--accent); text-align: center; border-radius: 8px; padding: 12px 16px; position: fixed; z-index: 3000; left: 50%; bottom: 25px; transform: translateX(-50%); font-family: monospace; font-size: 0.82rem; box-shadow: 0 6px 20px rgba(0,0,0,0.6); }
     #toast.show { visibility: visible; animation: fadein 0.4s, fadeout 0.4s 2.6s; }
-    @keyframes fadein { from { bottom: 0; opacity: 0; } to { bottom: 30px; opacity: 1; } }
-    @keyframes fadeout { from { bottom: 30px; opacity: 1; } to { bottom: 0; opacity: 0; } }
+    @keyframes fadein { from { bottom: 0; opacity: 0; } to { bottom: 25px; opacity: 1; } }
+    @keyframes fadeout { from { bottom: 25px; opacity: 1; } to { bottom: 0; opacity: 0; } }
 
-    footer { text-align: center; margin-top: 70px; color: var(--text-muted); font-size: 0.84rem; border-top: 1px solid var(--border); padding-top: 30px; }
+    footer { text-align: center; margin-top: 55px; color: var(--text-muted); font-size: 0.8rem; border-top: 1px solid var(--border); padding-top: 25px; }
+
+    /* ==============================================================
+       MOBILE RESPONSIVENESS BREAKPOINTS (Phone & Tablet)
+       ============================================================== */
+    @media (max-width: 860px) {
+      .nav-inner { flex-wrap: wrap; padding: 8px 14px; }
+      .nav-center-links { order: 3; width: 100%; overflow-x: auto; padding-top: 8px; padding-bottom: 4px; gap: 16px; -webkit-overflow-scrolling: touch; }
+      .nav-center-links::-webkit-scrollbar { display: none; }
+      .nav-center-links { -ms-overflow-style: none; scrollbar-width: none; }
+      .hero-cta .btn { width: 100%; }
+    }
+
+    @media (max-width: 520px) {
+      body { padding-bottom: 75px; }
+      .brand-logo span { font-size: 0.95rem; }
+      .brand-logo img.logo-img { width: 30px; height: 30px; }
+      .nav-actions { gap: 6px; }
+      .select-pill { font-size: 0.72rem; padding: 5px 20px 5px 8px; }
+      .icon-btn { padding: 5px 9px; font-size: 0.72rem; }
+      .btn-portal { padding: 5px 10px; font-size: 0.75rem; }
+      .float-wa { bottom: 12px; right: 12px; padding: 8px 14px; font-size: 0.78rem; }
+      .feature-box { padding: 16px 12px; }
+      .terminal-body { padding: 12px; font-size: 0.8rem; }
+      .contact-section { padding: 22px 14px; }
+      .modal-box { padding: 18px 14px; }
+      .pay-tab { font-size: 0.75rem; padding: 6px; }
+      .input-row input, .input-row select, .input-row textarea { min-width: 100%; }
+    }
   </style>
 </head>
 <body>
@@ -225,23 +287,15 @@
   <div id="toast">Notification</div>
 
   <!-- WhatsApp Floating Action -->
-  <a href="https://wa.me/917597264028?text=Hi%20Nikhil,%20I%20am%20interested%20in%20a%20security%20audit" target="_blank" rel="noopener noreferrer" class="float-wa">💬 Instant WhatsApp Chat</a>
+  <a href="https://wa.me/917597264028?text=Hi%20Nikhil,%20I%20am%20interested%20in%20a%20security%20audit" target="_blank" rel="noopener noreferrer" class="float-wa">💬 WhatsApp</a>
 
   <!-- Top Sticky Glass Navbar -->
   <header class="nav-wrapper">
     <div class="nav-inner">
-   <a href="#" class="brand-logo">
-          <img src="ww.png" alt="Logo" style="width: 38px; height: 38px; object-fit: contain; vertical-align: middle; border-radius: 50%; filter: drop-shadow(0 0 8px rgba(0, 255, 102, 0.5));">
-          <span>&lt;NIKHIL<span class="accent-text">SONI</span> /&gt;</span>
-        </a>
-      
-      <div class="nav-center-links">
-        <a href="#packages">Plans & Pay</a>
-        <a href="#jwt-lab">JWT Lab</a>
-        <a href="#encoder">Encoder</a>
-        <a href="#cidr">CIDR</a>
-        <a href="#contact">Contact</a>
-      </div>
+      <a href="#" class="brand-logo">
+        <img src="ww.png" alt="Cyber Wolf Logo" class="logo-img" width="34" height="34">
+        <span>&lt;NIKHIL<span class="accent-text">.PENTEST</span> /&gt;</span>
+      </a>
 
       <div class="nav-actions">
         <select class="select-pill" id="theme-selector" aria-label="Theme Selector" title="Choose color theme" onchange="setTheme(this.value)">
@@ -253,9 +307,17 @@
           <option value="INR">₹ INR</option>
           <option value="USD">$ USD</option>
         </select>
-        <button class="icon-btn" onclick="playBeep(); toggleMatrix();" title="Matrix Rain Animation">⚡ Rain</button>
+        <button class="icon-btn" onclick="playBeep(); toggleMatrix();" title="Matrix Rain Animation">⚡</button>
         <button class="icon-btn" id="sound-btn" onclick="toggleAudioFx()" title="Toggle Web Audio Feedback">🔊</button>
-        <button class="btn-portal" id="portal-btn" onclick="openAuthModal()">🔐 Client Portal</button>
+        <button class="btn-portal" id="portal-btn" onclick="openAuthModal()">🔐 Portal</button>
+      </div>
+      
+      <div class="nav-center-links">
+        <a href="#packages">Plans & Pay</a>
+        <a href="#jwt-lab">JWT Lab</a>
+        <a href="#encoder">Encoder</a>
+        <a href="#cidr">CIDR</a>
+        <a href="#contact">Contact</a>
       </div>
     </div>
   </header>
@@ -265,45 +327,45 @@
     <div class="modal-box text-center">
       <span class="modal-close" onclick="closePaymentModal()">&times;</span>
       
-      <span class="text-accent font-mono font-bold">SECURE CHECKOUT GATEWAY</span>
-      <h3 id="pay-tier-title" class="text-white">Standard Web Pentest</h3>
-      <div id="pay-tier-amount" class="pricing-price text-accent">₹7,999</div>
-      <p class="text-muted">Pay 50% advance or full audit fee to book reserved slot</p>
+      <span class="text-accent font-mono font-bold" style="font-size: 0.8rem;">SECURE CHECKOUT GATEWAY</span>
+      <h3 id="pay-tier-title" class="text-white" style="margin-top: 4px;">Standard Web Pentest</h3>
+      <div id="pay-tier-amount" class="pricing-price text-accent" style="margin: 6px 0;">₹7,999</div>
+      <p class="text-muted" style="font-size: 0.82rem;">Pay 50% advance or full fee to lock reserved slot</p>
 
       <div class="pay-tabs">
-        <div class="pay-tab active" id="tab-upi" onclick="switchPayMethod('upi')">🇮🇳 Instant UPI / QR</div>
-        <div class="pay-tab" id="tab-card" onclick="switchPayMethod('card')">💳 International Card / PayPal</div>
+        <div class="pay-tab active" id="tab-upi" onclick="switchPayMethod('upi')">🇮🇳 Instant UPI</div>
+        <div class="pay-tab" id="tab-card" onclick="switchPayMethod('card')">💳 Card / PayPal</div>
       </div>
 
-      <!-- UPI Payment View -->
+      <!-- UPI Payment View (Finding-03 & 05 Remediated) -->
       <div id="upi-pay-view">
         <div class="qr-container">
-          <img id="upi-qr-img" src="" alt="Scan UPI QR Code" width="170" height="170">
+          <img id="upi-qr-img" src="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22170%22 height=%22170%22 viewBox=%220 0 170 170%22><rect width=%22170%22 height=%22170%22 fill=%22%23f0f0f0%22/><text x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%23666%22 font-family=%22monospace%22 font-size=%2212%22>Generating QR...</text></svg>" alt="Scan UPI QR Code" width="160" height="160">
         </div>
-        <div class="text-muted">
-          Scan with <strong>GPay, PhonePe, Paytm, or BHIM</strong><br>
-          UPI ID: <span id="vpa-display" class="text-white font-mono font-bold">7597733026-2@ybl</span>
-          <button onclick="copyVpa()" class="icon-btn">Copy</button>
+        <div class="text-muted" style="font-size: 0.82rem;">
+          Scan with <strong>GPay, PhonePe, Paytm, BHIM</strong><br>
+          UPI: <span id="vpa-display" class="text-white font-mono font-bold">7597733026-2@ybl</span>
+          <button onclick="copyVpa()" class="icon-btn" style="margin-left: 4px;">Copy</button>
         </div>
 
-        <form id="payment-verify-form" onsubmit="submitPaymentProof(event)">
+        <form id="payment-verify-form" onsubmit="submitPaymentProof(event)" style="margin-top: 12px;">
           <div class="form-group">
             <label for="pay-client-name">Your Name / Work Email</label>
             <input type="text" id="pay-client-name" name="pay-client-name" required placeholder="e.g. Vikram Mehta (client@app.com)">
           </div>
           <div class="form-group">
-            <label for="pay-utr">UPI Transaction ID / 12-Digit UTR Ref</label>
+            <label for="pay-utr">UPI Transaction Ref / 12-Digit UTR</label>
             <input type="text" id="pay-utr" name="pay-utr" required placeholder="e.g. 423984719283">
           </div>
-          <button type="submit" class="btn btn-primary w-100">Verify & Lock Audit Schedule</button>
+          <button type="submit" class="btn btn-primary w-100">Verify & Lock Schedule</button>
         </form>
       </div>
 
       <!-- International / Card View -->
       <div id="card-pay-view">
-        <p class="text-muted">For international clients paying in USD via Credit Card, Debit Card, or PayPal invoice:</p>
-        <a id="paypal-link" href="https://paypal.me/nikhilsoni14" target="_blank" rel="noopener noreferrer" class="btn btn-primary w-100">Proceed to PayPal Checkout ↗</a>
-        <p class="text-muted">Invoices include NDA and formal scoping documentation.</p>
+        <p class="text-muted" style="font-size: 0.85rem; margin-bottom: 14px;">For international clients paying in USD via Card or PayPal:</p>
+        <a id="paypal-link" href="https://paypal.me/nikhilsoni14" target="_blank" rel="noopener noreferrer" class="btn btn-primary w-100">Proceed to PayPal ↗</a>
+        <p class="text-muted" style="font-size: 0.78rem; margin-top: 8px;">Invoices include NDA and formal scoping documentation.</p>
       </div>
     </div>
   </div>
@@ -313,6 +375,8 @@
     <div class="modal-box">
       <span class="modal-close" onclick="closeAuthModal()">&times;</span>
       
+      <div class="demo-badge">SIMULATED CLIENT INTERFACE (DEMO)</div>
+
       <div class="pay-tabs">
         <div class="pay-tab active" id="tab-login" onclick="switchAuthTab('login')">Client Login</div>
         <div class="pay-tab" id="tab-signup" onclick="switchAuthTab('signup')">Sign Up</div>
@@ -327,12 +391,12 @@
           <label for="login-password">Password</label>
           <input type="password" id="login-password" name="login-password" required placeholder="••••••••">
         </div>
-        <button type="submit" class="btn btn-primary w-100">Login to Portal</button>
+        <button type="submit" class="btn btn-primary w-100">Login to Demo Portal</button>
       </form>
 
       <form id="signup-form" onsubmit="handleAuthSignup(event)">
         <div class="form-group">
-          <label for="signup-org">Organization / Company Name</label>
+          <label for="signup-org">Organization Name</label>
           <input type="text" id="signup-org" name="signup-org" required placeholder="e.g. Acme Tech Solutions">
         </div>
         <div class="form-group">
@@ -343,33 +407,33 @@
           <label for="signup-password">Create Password</label>
           <input type="password" id="signup-password" name="signup-password" required placeholder="Min 6 characters">
         </div>
-        <button type="submit" class="btn btn-primary w-100">Create Client Account</button>
+        <button type="submit" class="btn btn-primary w-100">Create Demo Account</button>
       </form>
     </div>
   </div>
 
   <div class="container">
-    <!-- Active Client Engagement Dashboard -->
+    <!-- Active Client Engagement Dashboard (Finding-02 Remediated) -->
     <div id="client-dashboard">
       <div class="dash-header-row">
         <div>
-          <span class="text-accent font-mono font-bold">● CLIENT ENGAGEMENT ACTIVE</span>
-          <h3 id="dash-user-title" class="text-white">Welcome, Client</h3>
+          <span class="demo-badge">● SIMULATED ENGAGEMENT ENVIRONMENT</span>
+          <h3 id="dash-user-title" class="text-white" style="font-size: 1.1rem;">Active Scope Session</h3>
         </div>
-        <button class="btn btn-outline" onclick="handleLogout()">Sign Out</button>
+        <button class="btn btn-outline" style="min-height: 36px; padding: 6px 12px; font-size: 0.8rem;" onclick="handleLogout()">Sign Out</button>
       </div>
       <div class="dash-grid">
         <div class="dash-card">
-          <div class="dash-card-label">AUDIT STATUS</div>
-          <div class="dash-card-val text-accent">Active &bull; Manual Auditing</div>
+          <div class="dash-card-label">AUDIT POSTURE</div>
+          <div class="dash-card-val text-accent">Active &bull; Manual Testing</div>
         </div>
         <div class="dash-card">
-          <div class="dash-card-label">PAYMENT STATUS</div>
+          <div class="dash-card-label">PAYMENT CONFIRMATION</div>
           <div class="dash-card-val text-accent">Advance Received ✓</div>
         </div>
         <div class="dash-card">
-          <div class="dash-card-label">INTERIM DELIVERABLE</div>
-          <div class="dash-card-val text-blue cursor-pointer" onclick="showToast('Draft report available upon retest completion.')">Download Report ⬇</div>
+          <div class="dash-card-label">SAMPLE DELIVERABLE</div>
+          <div class="dash-card-val text-blue cursor-pointer" onclick="showToast('Demo deliverable: sanitized report.')">View Mock Report ⬇</div>
         </div>
       </div>
     </div>
@@ -381,7 +445,7 @@
       <p class="subtitle">Manual vulnerability assessment and code-level remediation to protect business-critical web applications from data leaks and logic flaws.</p>
       <div class="hero-cta">
         <a href="#packages" class="btn btn-primary" onclick="playBeep()">Choose Plan & Reserve</a>
-        <button class="btn btn-outline" onclick="playBeep(); window.print();">📄 Print Scope Proposal PDF</button>
+        <button class="btn btn-outline" onclick="playBeep(); window.print();">📄 Print Proposal PDF</button>
       </div>
     </header>
 
@@ -392,22 +456,22 @@
       <div class="bounty-badge"><span>✓</span> Safe Harbor Adherent</div>
     </div>
 
-    <!-- Interactive Terminal -->
+    <!-- Interactive Terminal (Sanitized Against DOM XSS) -->
     <div class="terminal-window">
       <div class="terminal-bar">
         <span class="t-btn t-close"></span>
         <span class="t-btn t-min"></span>
         <span class="t-btn t-max"></span>
-        <span class="terminal-title">Interactive Terminal Shell (Type 'help')</span>
+        <span class="terminal-title">Interactive Terminal Shell (Safe DOM Evaluator)</span>
       </div>
       <div class="terminal-body" id="term-output">
-        <p class="text-muted">Welcome to Nikhil Security Shell v4.0 (Offensive Security Console).</p>
+        <p class="text-muted">Welcome to Nikhil Security Shell v5.0 (Defensive Hardened Build).</p>
         <p class="text-muted">Type <span class="text-accent font-bold">help</span>, <span class="text-accent font-bold">skills</span>, <span class="text-accent font-bold">pay</span>, or <span class="text-accent font-bold">clear</span>.</p>
       </div>
       <div class="terminal-input-bar">
         <div class="t-input-line">
           <span class="t-prompt">kali@security:~$</span>
-          <input type="text" id="term-cli" class="t-input" autofocus placeholder="type command here..." onkeydown="handleTerminalCommand(event)">
+          <input type="text" id="term-cli" class="t-input" placeholder="type command..." onkeydown="handleTerminalCommand(event)">
         </div>
       </div>
     </div>
@@ -419,7 +483,7 @@
       <div class="pricing-card">
         <div>
           <h3>Rapid Surface Audit</h3>
-          <p class="text-muted">For landing pages & brochure sites</p>
+          <p class="text-muted" style="font-size: 0.85rem;">For landing pages & brochure sites</p>
           <div class="pricing-price" id="price-basic">₹2,999</div>
           <ul class="pricing-features">
             <li>✔ Exposed sensitive file discovery</li>
@@ -437,9 +501,9 @@
       <!-- Plan 2 -->
       <div class="pricing-card featured">
         <div>
-          <span class="text-accent font-mono font-bold">RECOMMENDED</span>
+          <span class="text-accent font-mono font-bold" style="font-size: 0.78rem;">RECOMMENDED</span>
           <h3>Standard Web Pentest</h3>
-          <p class="text-muted">For SaaS portals, web apps & auth flows</p>
+          <p class="text-muted" style="font-size: 0.85rem;">For SaaS portals, web apps & auth flows</p>
           <div class="pricing-price" id="price-standard">₹7,999</div>
           <ul class="pricing-features">
             <li>✔ Full OWASP Top 10 manual testing</li>
@@ -458,7 +522,7 @@
       <div class="pricing-card">
         <div>
           <h3>Comprehensive Scope</h3>
-          <p class="text-muted">For complex backends & fintech platforms</p>
+          <p class="text-muted" style="font-size: 0.85rem;">For complex backends & fintech platforms</p>
           <div class="pricing-price" id="price-custom">Custom / ₹14,999+</div>
           <ul class="pricing-features">
             <li>✔ Comprehensive REST/GraphQL API testing</li>
@@ -486,7 +550,7 @@
       </div>
       <div class="trust-box">
         <div class="stat">&lt; 48h</div>
-        <div class="stat-label">Initial Assessment Window</div>
+        <div class="stat-label">Initial Assessment</div>
       </div>
       <div class="trust-box">
         <div class="stat">NDA</div>
@@ -497,7 +561,7 @@
     <!-- Telemetry -->
     <h2 class="section-title">Telemetry & Real-Time Proxy Latency</h2>
     <div class="feature-box">
-      <p class="text-muted">Packet transit monitor measuring non-intrusive latency during proxy interception:</p>
+      <p class="text-muted" style="font-size: 0.85rem;">Packet transit monitor measuring non-intrusive latency during proxy interception:</p>
       <canvas id="ping-canvas"></canvas>
       <div class="telemetry-meta">
         <span>Delay: <strong id="ping-ms" class="text-accent">24 ms</strong></span>
@@ -507,9 +571,9 @@
     </div>
 
     <!-- JWT Exploit Lab -->
-    <h2 class="section-title" id="jwt-lab">Interactive JWT Security & Exploit Lab</h2>
+    <h2 class="section-title" id="jwt-lab">Interactive JWT Security Lab</h2>
     <div class="feature-box">
-      <p class="text-muted">Modern SaaS applications rely on JSON Web Tokens. Test how signature strip attacks (such as the <code>alg: none</code> flaw) permit privilege escalation:</p>
+      <p class="text-muted" style="font-size: 0.85rem;">Modern SaaS applications rely on JSON Web Tokens. Test how signature strip attacks (such as the <code>alg: none</code> flaw) permit privilege escalation:</p>
       <div class="jwt-grid">
         <div class="jwt-box">
           <span class="text-danger font-bold">HEADER</span>
@@ -521,7 +585,7 @@
         </div>
         <div class="jwt-box">
           <span class="text-accent font-bold">SIGNATURE STATUS</span>
-          <div id="jwt-sig-status" class="text-accent">HMAC-SHA256 (Verified)</div>
+          <div id="jwt-sig-status" class="text-accent" style="margin-top: 6px;">HMAC-SHA256 (Verified)</div>
         </div>
       </div>
       <div class="gap-10">
@@ -530,7 +594,7 @@
       </div>
     </div>
 
-    <!-- Payload Encoder -->
+    <!-- Payload Encoder (Finding-01: Sanitized textContent) -->
     <h2 class="section-title" id="encoder">Payload Encoder & Decoder</h2>
     <div class="feature-box">
       <div class="input-row">
@@ -560,7 +624,7 @@
     <!-- Contact Form Section -->
     <section class="contact-section" id="contact">
       <h2>Schedule a Security Assessment</h2>
-      <p class="text-muted">Provide your target domain or application details below to receive a formal assessment scope.</p>
+      <p class="text-muted" style="font-size: 0.88rem; margin-bottom: 16px;">Provide your target domain or application details below to receive a formal assessment scope.</p>
 
       <form id="contact-form" action="https://formspree.io/f/xljewjly" method="POST">
         <div class="form-group">
@@ -586,7 +650,7 @@
         <button type="submit" id="submit-btn" class="btn btn-primary w-100">Submit Inquiry</button>
       </form>
 
-      <a href="https://wa.me/917597264028?text=Hi%20Nikhil,%20I%20want%20to%20discuss%20a%20security%20audit" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp w-100">Connect Directly on WhatsApp</a>
+      <a href="https://wa.me/917597264028?text=Hi%20Nikhil,%20I%20want%20to%20discuss%20a%20security%20audit" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">Connect Directly on WhatsApp</a>
     </section>
 
     <footer>
@@ -595,11 +659,9 @@
   </div>
 
   <script>
-    /* Configuration */
     const MY_UPI_ID = "7597733026-2@ybl";
     const MY_NAME = "Nikhil Soni";
 
-    /* Payment Modal */
     let currentPayAmount = 7999;
     let currentTierName = "Standard Web Pentest";
 
@@ -648,7 +710,6 @@
       });
     }
 
-    /* Submit Proof */
     async function submitPaymentProof(e) {
       e.preventDefault();
       const client = document.getElementById('pay-client-name').value.trim();
@@ -685,7 +746,6 @@
       }
     }
 
-    /* Toast */
     function showToast(text) {
       const toast = document.getElementById('toast');
       toast.innerText = text;
@@ -693,7 +753,6 @@
       setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
     }
 
-    /* Client Auth & 1-Click Logout Toggle */
     function openAuthModal() {
       document.getElementById('auth-modal').style.display = 'flex';
       playBeep(800);
@@ -724,7 +783,7 @@
       const email = document.getElementById('signup-email').value.trim();
       localStorage.setItem('pentest_client', JSON.stringify({ org: org, email: email }));
       closeAuthModal();
-      showToast(`✓ Account created for ${org}`);
+      showToast(`✓ Demo account active for ${org}`);
       updateUserSession();
     }
 
@@ -737,7 +796,7 @@
         localStorage.setItem('pentest_client', JSON.stringify(user));
       }
       closeAuthModal();
-      showToast(`✓ Welcome back, ${user.org}`);
+      showToast(`✓ Demo Session: ${user.org}`);
       updateUserSession();
     }
 
@@ -755,10 +814,9 @@
       if (user) {
         if (dash) dash.style.display = 'block';
         const userTitle = document.getElementById('dash-user-title');
-        if (userTitle) userTitle.innerText = `Organization: ${user.org} (${user.email})`;
+        if (userTitle) userTitle.innerText = `Demo Scope: ${user.org} (${user.email})`;
         
-        // 1-Click direct red logout on navbar
-        portalBtn.innerHTML = `👤 ${user.org} [Logout]`;
+        portalBtn.innerHTML = `👤 ${user.org} [Exit]`;
         portalBtn.style.borderColor = '#ff4757';
         portalBtn.style.color = '#fff';
         portalBtn.style.background = 'rgba(255, 71, 87, 0.15)';
@@ -767,7 +825,7 @@
         };
       } else {
         if (dash) dash.style.display = 'none';
-        portalBtn.innerHTML = `🔐 Client Portal`;
+        portalBtn.innerHTML = `🔐 Portal`;
         portalBtn.style.borderColor = 'var(--accent)';
         portalBtn.style.color = 'var(--accent)';
         portalBtn.style.background = 'var(--accent-dim)';
@@ -787,7 +845,6 @@
       }, 400);
     }
 
-    /* AJAX Background Contact Form */
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
       contactForm.addEventListener('submit', async function(e) {
@@ -822,38 +879,49 @@
       });
     }
 
-    /* Synthesizer */
+    /* Web Audio Synthesizer */
     let audioEnabled = true;
-    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    let audioCtx = null;
+
+    function getAudioContext() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
     function playBeep(freq = 880, type = 'sine', duration = 0.04) {
       if (!audioEnabled) return;
       try {
-        const osc = audioCtx.createOscillator();
-        const gain = audioCtx.createGain();
+        const ctx = getAudioContext();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
         osc.type = type;
         osc.frequency.value = freq;
-        gain.gain.setValueAtTime(0.03, audioCtx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+        gain.gain.setValueAtTime(0.03, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + duration);
         osc.connect(gain);
-        gain.connect(audioCtx.destination);
+        gain.connect(ctx.destination);
         osc.start();
-        osc.stop(audioCtx.currentTime + duration);
+        osc.stop(ctx.currentTime + duration);
       } catch (e) {}
     }
+
     function toggleAudioFx() {
       audioEnabled = !audioEnabled;
       document.getElementById('sound-btn').innerText = audioEnabled ? "🔊" : "🔇";
       if (audioEnabled) playBeep(1200);
     }
 
-    /* Theme Engine */
     function setTheme(theme) {
       if (theme === 'cyan') document.documentElement.setAttribute('data-theme', 'cyan');
       else if (theme === 'red') document.documentElement.setAttribute('data-theme', 'red');
       else document.documentElement.removeAttribute('data-theme');
     }
 
-    /* Currency Switcher */
     function toggleCurrency() {
       const cur = document.getElementById('currency-toggle').value;
       if (cur === 'USD') {
@@ -867,7 +935,6 @@
       }
     }
 
-    /* JWT Lab */
     function simulateJwtExploit() {
       document.getElementById('jwt-header-view').innerText = `{ "alg": "none", "typ": "JWT" }`;
       document.getElementById('jwt-payload-view').innerText = `{ "user_id": 1042, "role": "ADMIN_SUPERUSER" }`;
@@ -875,6 +942,7 @@
       sig.innerText = `EXPLOITED: Signature Stripped (Accepted)`;
       sig.className = "text-danger font-bold";
     }
+
     function resetJwt() {
       document.getElementById('jwt-header-view').innerText = `{ "alg": "HS256", "typ": "JWT" }`;
       document.getElementById('jwt-payload-view').innerText = `{ "user_id": 1042, "role": "member" }`;
@@ -883,7 +951,7 @@
       sig.className = "text-accent font-bold";
     }
 
-    /* Payload Encoder */
+    /* Payload Encoder (Finding-01: textContent eliminates XSS sink) */
     function transformPayload(action) {
       const input = document.getElementById('encode-input').value;
       const out = document.getElementById('encode-output');
@@ -894,69 +962,92 @@
         else if (action === 'urle') res = encodeURIComponent(input);
         else if (action === 'urld') res = decodeURIComponent(input);
         out.style.display = 'block';
-        out.innerHTML = `<span class="text-accent">${res}</span>`;
+        out.textContent = res;
+        out.className = "tool-output text-accent";
       } catch (e) {
         out.style.display = 'block';
-        out.innerHTML = `<span class="text-danger">Conversion error</span>`;
+        out.textContent = "Conversion error";
+        out.className = "tool-output text-danger";
       }
     }
 
-    /* CIDR Calculator */
     function calculateSubnet() {
       const input = document.getElementById('cidr-input').value.trim();
       const out = document.getElementById('cidr-output');
       const parts = input.split('/');
       if (parts.length !== 2) {
         out.style.display = 'block';
-        out.innerHTML = `<span class="text-danger">Invalid format (e.g. 192.168.1.0/24)</span>`;
+        out.textContent = "Invalid format (e.g. 192.168.1.0/24)";
+        out.className = "tool-output text-danger";
         return;
       }
       const mask = parseInt(parts[1], 10);
       const totalHosts = Math.pow(2, 32 - mask);
       out.style.display = 'block';
-      out.innerHTML = `Mask: /${mask} | Total Hosts: ${totalHosts.toLocaleString()} | Testing Mode: Non-Destructive SYN Scan`;
+      out.textContent = `Mask: /${mask} | Total Hosts: ${totalHosts.toLocaleString()} | Mode: Non-Destructive SYN Scan`;
+      out.className = "tool-output text-accent";
     }
 
-    /* Terminal CLI */
+    /* Terminal CLI (Finding-01: textContent prevents DOM XSS) */
+    function printTerminalLine(text, styleClass = '') {
+      const out = document.getElementById('term-output');
+      const p = document.createElement('p');
+      if (styleClass) p.className = styleClass;
+      p.textContent = text;
+      out.appendChild(p);
+      out.scrollTop = out.scrollHeight;
+    }
+
     function handleTerminalCommand(e) {
       if (e.key === "Enter") {
         playBeep(600);
         const input = document.getElementById('term-cli');
-        const cmd = input.value.trim().toLowerCase();
+        const cmd = input.value.trim();
+        const lowerCmd = cmd.toLowerCase();
         const out = document.getElementById('term-output');
 
-        out.innerHTML += `<p><span class="t-prompt">kali@security:~$</span> ${cmd}</p>`;
+        const promptP = document.createElement('p');
+        const promptSpan = document.createElement('span');
+        promptSpan.className = 't-prompt';
+        promptSpan.textContent = 'kali@security:~$ ';
+        promptP.appendChild(promptSpan);
+        promptP.appendChild(document.createTextNode(cmd));
+        out.appendChild(promptP);
 
-        if (cmd === 'help') {
-          out.innerHTML += `<p class="text-accent">Commands: whoami, skills, scan, pay, portal, clear</p>`;
-        } else if (cmd === 'whoami') {
-          out.innerHTML += `<p>Nikhil Soni — Offensive Security Researcher & Penetration Tester.</p>`;
-        } else if (cmd === 'pay') {
+        if (lowerCmd === 'help') {
+          printTerminalLine("Commands: whoami, skills, scan, pay, portal, clear", "text-accent");
+        } else if (lowerCmd === 'whoami') {
+          printTerminalLine("Nikhil Soni — Offensive Security Researcher & Penetration Tester.");
+        } else if (lowerCmd === 'pay') {
           openPaymentModal('Standard Web Pentest', 7999, 99);
-          out.innerHTML += `<p class="text-accent">Opening checkout modal...</p>`;
-        } else if (cmd === 'portal') {
+          printTerminalLine("Opening checkout modal...", "text-accent");
+        } else if (lowerCmd === 'portal') {
           openAuthModal();
-          out.innerHTML += `<p class="text-accent">Opening Client Portal...</p>`;
-        } else if (cmd === 'scan') {
-          out.innerHTML += `<p class="text-warning">[!] Scanning perimeter... Ports 80, 443 active.</p>`;
-        } else if (cmd === 'skills') {
-          out.innerHTML += `<p>OWASP Top 10, IDOR, Burp Suite Pro, ffuf, Nmap, Python Scripting.</p>`;
-        } else if (cmd === 'clear') {
+          printTerminalLine("Opening Client Portal...", "text-accent");
+        } else if (lowerCmd === 'scan') {
+          printTerminalLine("[!] Scanning perimeter... Ports 80, 443 active.", "text-warning");
+        } else if (lowerCmd === 'skills') {
+          printTerminalLine("OWASP Top 10, IDOR, Burp Suite Pro, ffuf, Nmap, Python Scripting.");
+        } else if (lowerCmd === 'clear') {
           out.innerHTML = '';
         } else {
-          out.innerHTML += `<p class="text-danger">Command not recognized: ${cmd}</p>`;
+          printTerminalLine(`Command not recognized: ${cmd}`, "text-danger");
         }
         input.value = '';
         out.scrollTop = out.scrollHeight;
       }
     }
 
-    /* Latency Graph */
+    /* Responsive Latency Graph */
     const pCanvas = document.getElementById('ping-canvas');
     const pCtx = pCanvas.getContext('2d');
-    pCanvas.width = pCanvas.offsetWidth;
-    pCanvas.height = 90;
-    const pPoints = Array(50).fill(25);
+    function resizeCanvas() {
+      pCanvas.width = pCanvas.offsetWidth;
+      pCanvas.height = 90;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    const pPoints = Array(40).fill(25);
 
     function drawPing() {
       const jitter = Math.floor(20 + Math.random() * 12);
